@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wasted Your Time</title>
+  <link rel="stylesheet" href="style.css">
+<style type="text/css" id="dcoder_stylesheet">body {
+  font-family: Arial, sans-serif;
+  background-color: #ff000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  font-weight: bold;
+}</style></head>
+<body>
+  <div class="container">
+    <button id="wasteTimeBtn">Click here for nudes</button>
+    <p id="message" style="display: none;">Congrats, you wasted your time on nothing!</p>
+  </div>
+
+  <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">document.getElementById('wasteTimeBtn').addEventListener('click', function() {
+  // Hide the button after it's clicked
+  this.style.display = 'none';
+
+  // Show the message
+  document.getElementById('message').style.display = 'block';
+});</script></body></html>
