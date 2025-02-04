@@ -64,16 +64,18 @@ p {
   // Hide the button after it's clicked
   this.style.display = 'none';
 const splash = document.getElementById('splash');
+document.getElementById('prankButton').addEventListener('click', function() {
+  const splash = document.getElementById('splash');
 
-document.querySelector('button').addEventListener('click', function() {
   // Splash goes boom!
   splash.style.transform = 'translate(-50%, -50%) scale(5)';
-  
+
   // Splash slides out of frame
   setTimeout(() => {
     splash.style.top = '150%';
   }, 500);
 });
+
   // Show the message
   document.getElementById('message').style.display = 'block';
 });</script></body></html>
