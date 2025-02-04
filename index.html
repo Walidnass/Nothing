@@ -1,81 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Click the red button on this funny, pointless website and waste your time with us!" />
-  <title>Wasting Time on a Funny, Pointless Website</title>
-  <link rel="stylesheet" href="style.css">
-<style type="text/css" id="dcoder_stylesheet">body {
-  font-family: Arial, sans-serif;
-  background-color: #ff000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prank Splash</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      flex-direction: column;
+    }
 
-.container {
-  text-align: center;
-}
+    #prankButton {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 2;
+    }
 
-button {
-  padding: 20px 40px;
-  font-size: 20px;
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: darkred;
-}
-#splash {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s ease-out, top 1s ease-in;
-  z-index: 1;
-}
-p {
-  font-size: 18px;
-  color: #333;
-  margin-top: 20px;
-  font-weight: bold;
-}</style></head>
+    #splash {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.5s ease-out, top 1s ease-in;
+      z-index: 1;
+    }
+  </style>
+</head>
 <body>
-  <div class="container">
-    <button id="prankButton">Click here for nudes</button>
-    <div id="splash"></div>
-    <p id="message" style="display: none;">Congrats, you wasted your time on nothing!</p>
-  </div>
 
-  <script src="script.js"></script>
+  <button id="prankButton">Click Me!</button>
+  <div id="splash"></div>
 
-<script type="text/javascript" id="dcoder_script">document.getElementById('prankButton').addEventListener('click', function() {
-  // Hide the button after it's clicked
-  this.style.display = 'none';
-const splash = document.getElementById('splash');
-document.getElementById('prankButton').addEventListener('click', function() {
-  const splash = document.getElementById('splash');
+  <script>
+    const prankButton = document.getElementById('prankButton');
+    const splash = document.getElementById('splash');
 
-  // Splash goes boom!
-  splash.style.transform = 'translate(-50%, -50%) scale(5)';
+    prankButton.addEventListener('click', function() {
+      // Splash goes boom!
+      splash.style.transform = 'translate(-50%, -50%) scale(5)';
 
-  // Splash slides out of frame
-  setTimeout(() => {
-    splash.style.top = '150%';
-  }, 500);
-});
+      // Splash slides out of frame
+      setTimeout(() => {
+        splash.style.top = '150%';
+      }, 500);
+    });
+  </script>
 
-  // Show the message
-  document.getElementById('message').style.display = 'block';
-});</script></body></html>
+</body>
+</html>
