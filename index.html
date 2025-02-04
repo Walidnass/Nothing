@@ -38,18 +38,31 @@
       transition: transform 0.5s ease-out, top 1s ease-in;
       z-index: 1;
     }
+
+    #message {
+      display: none;
+      font-size: 24px;
+      color: #333;
+      margin-top: 20px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
   <button id="prankButton">Click Me!</button>
   <div id="splash"></div>
+  <p id="message">You wasted your time on nothing!</p>
 
   <script>
     const prankButton = document.getElementById('prankButton');
     const splash = document.getElementById('splash');
+    const message = document.getElementById('message');
 
     prankButton.addEventListener('click', function() {
+      // Hide the button
+      prankButton.style.display = 'none';
+
       // Splash goes boom!
       splash.style.transform = 'translate(-50%, -50%) scale(5)';
 
@@ -57,6 +70,11 @@
       setTimeout(() => {
         splash.style.top = '150%';
       }, 500);
+
+      // Show the prank message after splash
+      setTimeout(() => {
+        message.style.display = 'block';
+      }, 1500);
     });
   </script>
 
