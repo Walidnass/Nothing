@@ -33,7 +33,18 @@ button {
 button:hover {
   background-color: darkred;
 }
-
+#splash {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-out, top 1s ease-in;
+  z-index: 1;
+}
 p {
   font-size: 18px;
   color: #333;
@@ -43,6 +54,7 @@ p {
 <body>
   <div class="container">
     <button id="wasteTimeBtn">Click here for nudes</button>
+    <div id="splash"></div>
     <p id="message" style="display: none;">Congrats, you wasted your time on nothing!</p>
   </div>
 
@@ -51,7 +63,17 @@ p {
 <script type="text/javascript" id="dcoder_script">document.getElementById('wasteTimeBtn').addEventListener('click', function() {
   // Hide the button after it's clicked
   this.style.display = 'none';
+const splash = document.getElementById('splash');
 
+document.querySelector('button').addEventListener('click', function() {
+  // Splash goes boom!
+  splash.style.transform = 'translate(-50%, -50%) scale(5)';
+  
+  // Splash slides out of frame
+  setTimeout(() => {
+    splash.style.top = '150%';
+  }, 500);
+});
   // Show the message
   document.getElementById('message').style.display = 'block';
 });</script></body></html>
